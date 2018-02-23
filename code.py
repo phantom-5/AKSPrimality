@@ -1,7 +1,7 @@
 import math
 
 
-print("Implements AKS Primality Test with memoization using dictionary")
+print("Implements AKS Primality Test")
 
 
 print("Enter lower bound(Inclusive): ")
@@ -12,7 +12,6 @@ global u
 u=int(input())
 
 
-dict={0:False}
 
 
 def ncr(n,r):
@@ -30,12 +29,7 @@ def aks(a):
 print("The primes are: ")
 while(l<u):
     if l%2!=0:
-        k=dict.get(l,0)
-        if dict[k] is True:
+        if aks(l) is True and l!=1:
             print(l)
-        elif aks(l) is True and l!=1:
-            print(l)
-            dict[l]=True
-
     l=l+1
 
